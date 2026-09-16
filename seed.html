@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seed Demo Data — Stonefield & Co.</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header site-header--solid">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co.</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="auth-card">
+        <p class="hero-kicker">One-time utility</p>
+        <h1>Seed demo listings</h1>
+        <p class="auth-sub">
+          Writes the 8 demo listings into your Firestore <code>listings</code> collection,
+          using fixed IDs so every existing <code>listing-detail.html?id=…</code> link keeps working.
+          Safe to run more than once, it overwrites the same documents rather than duplicating them.
+        </p>
+
+        <p id="seed-status" style="margin-top: 20px; font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-muted);">Checking sign-in status…</p>
+
+        <button id="seed-button" class="auth-submit" style="margin-top: 16px;" disabled>Seed Firestore</button>
+
+        <p class="auth-switch"><a href="login.html">Go to sign in</a> · <a href="signup.html">Go to sign up</a></p>
+
+        <pre id="seed-log" style="margin-top: 24px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); white-space: pre-wrap;"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/seed.js"></script>
+</body>
+</html>

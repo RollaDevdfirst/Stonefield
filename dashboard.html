@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard — Stonefield & Co.</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="auth-pending">
+<div class="auth-loading-overlay">Checking access…</div>
+
+  <header class="site-header site-header--solid">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co.</a>
+      <nav class="main-nav">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">My Dashboard</a>
+        <a href="login.html" class="nav-cta">Sign in</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="listings-intro listings-intro--plain">
+      <div class="listings-intro-content">
+        <p class="hero-kicker hero-kicker--dark">My Dashboard</p>
+        <h1 id="welcome-heading">Welcome back.</h1>
+      </div>
+    </section>
+
+    <section class="dashboard-tabs-wrap">
+      <div class="dashboard-tabs" role="tablist">
+        <button class="dashboard-tab is-active" data-tab="overview">Overview</button>
+        <button class="dashboard-tab" data-tab="saved">Saved Homes</button>
+        <button class="dashboard-tab" data-tab="buy">Buy Requests</button>
+        <button class="dashboard-tab" data-tab="consultations">Consultations</button>
+        <button class="dashboard-tab" data-tab="inquiries">My Inquiries</button>
+      </div>
+    </section>
+
+    <section class="dashboard-content">
+
+      <!-- ===== Overview ===== -->
+      <div class="dashboard-panel is-active" id="panel-overview">
+        <div class="admin-stats admin-stats--four">
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-saved">—</span>
+            <span class="admin-stat-label">Saved homes</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-buy">—</span>
+            <span class="admin-stat-label">Buy requests</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-consult">—</span>
+            <span class="admin-stat-label">Consultations</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="admin-stat-number" id="stat-inquiries">—</span>
+            <span class="admin-stat-label">Inquiries sent</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Saved Homes ===== -->
+      <div class="dashboard-panel" id="panel-saved">
+        <p class="results-count" id="saved-status">Loading saved homes…</p>
+        <div class="listings-grid" id="saved-grid"></div>
+        <div class="results-empty-state" id="saved-empty" hidden>
+          <p>You haven't saved any properties yet.</p>
+          <a href="listings.html" class="hero-link">Browse listings →</a>
+        </div>
+      </div>
+
+      <!-- ===== Buy Requests ===== -->
+      <div class="dashboard-panel" id="panel-buy">
+        <p class="results-count" id="buy-status">Loading buy requests…</p>
+        <div class="admin-table-wrap" id="buy-table-wrap" hidden>
+          <table class="admin-table">
+            <thead>
+              <tr><th>Listing</th><th>Status</th><th>Date</th></tr>
+            </thead>
+            <tbody id="buy-table-body"></tbody>
+          </table>
+        </div>
+        <div class="results-empty-state" id="buy-empty" hidden>
+          <p>No buy requests yet. Request to buy a saved home to see it here.</p>
+          <a href="#" class="hero-link" data-tab-link="saved">Go to Saved Homes →</a>
+        </div>
+      </div>
+
+      <!-- ===== Consultations ===== -->
+      <div class="dashboard-panel" id="panel-consultations">
+        <div class="dashboard-form-card">
+          <h2 class="detail-subheading">Book a consultation</h2>
+          <p class="auth-sub">Pick a date and time that works for you — this is a request, we'll confirm by email.</p>
+          <form id="consultation-form" class="admin-form">
+            <div class="admin-form-grid">
+              <div class="auth-field">
+                <label for="consult-name">Name</label>
+                <input type="text" id="consult-name" required />
+              </div>
+              <div class="auth-field">
+                <label for="consult-email">Email</label>
+                <input type="email" id="consult-email" required />
+              </div>
+              <div class="auth-field">
+                <label for="consult-date">Preferred date</label>
+                <input type="date" id="consult-date" required />
+              </div>
+              <div class="auth-field">
+                <label for="consult-time">Preferred time</label>
+                <input type="time" id="consult-time" required />
+              </div>
+            </div>
+            <div class="auth-field">
+              <label for="consult-message">Anything specific you'd like to discuss? (optional)</label>
+              <textarea id="consult-message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="auth-submit" style="width: auto; padding: 12px 28px;">Request Consultation</button>
+          </form>
+        </div>
+
+        <p class="results-count" id="consult-status" style="margin-top: 40px;">Loading your consultations…</p>
+        <div class="admin-table-wrap" id="consult-table-wrap" hidden>
+          <table class="admin-table">
+            <thead>
+              <tr><th>Requested for</th><th>Status</th></tr>
+            </thead>
+            <tbody id="consult-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== My Inquiries ===== -->
+      <div class="dashboard-panel" id="panel-inquiries">
+        <p class="results-count" id="inquiries-status">Loading your inquiries…</p>
+        <div class="admin-table-wrap" id="inquiries-table-wrap" hidden>
+          <table class="admin-table">
+            <thead>
+              <tr><th>Listing</th><th>Message</th><th>Status</th></tr>
+            </thead>
+            <tbody id="inquiries-table-body"></tbody>
+          </table>
+        </div>
+        <div class="results-empty-state" id="inquiries-empty" hidden>
+          <p>You haven't sent any inquiries yet.</p>
+          <a href="listings.html" class="hero-link">Browse listings →</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Stonefield&nbsp;&&nbsp;Co.</span>
+        <p>A portfolio demo project. Not a real estate agency.</p>
+      </div>
+      <div class="footer-links">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script type="module" src="js/auth-state.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

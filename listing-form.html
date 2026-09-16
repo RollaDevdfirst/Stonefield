@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Add Listing — Stonefield & Co.</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="auth-pending">
+<div class="auth-loading-overlay">Checking access…</div>
+
+  <header class="site-header site-header--solid">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co. <span class="admin-tag">Admin</span></a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="listings.html">Listings</a>
+        <a href="inquiries.html">Inquiries</a>
+        <a href="../index.html">View site</a>
+        <a href="../login.html" class="nav-cta">Sign in</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="listings-intro listings-intro--plain">
+      <div class="listings-intro-content">
+        <p class="hero-kicker hero-kicker--dark">Admin</p>
+        <h1 id="form-heading">Add a listing</h1>
+      </div>
+    </section>
+
+    <section class="admin-form-section">
+      <form id="listing-form" class="admin-form">
+
+        <div class="admin-form-grid">
+          <div class="auth-field">
+            <label for="field-title">Title</label>
+            <input type="text" id="field-title" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-price">Price (USD)</label>
+            <input type="number" id="field-price" min="0" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-location">Location</label>
+            <input type="text" id="field-location" placeholder="e.g. Lekki Phase 1, Lagos" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-type">Type</label>
+            <select id="field-type" required>
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="condo">Condo</option>
+              <option value="land">Land</option>
+            </select>
+          </div>
+
+          <div class="auth-field">
+            <label for="field-bedrooms">Bedrooms</label>
+            <input type="number" id="field-bedrooms" min="0" value="0" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-bathrooms">Bathrooms</label>
+            <input type="number" id="field-bathrooms" min="0" value="0" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-sqft">Square feet</label>
+            <input type="number" id="field-sqft" min="0" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="field-status">Status</label>
+            <select id="field-status" required>
+              <option value="available">Available</option>
+              <option value="sold">Sold</option>
+              <option value="rented">Rented</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label class="admin-checkbox-label">
+            <input type="checkbox" id="field-featured" />
+            Feature this listing on the homepage
+          </label>
+        </div>
+
+        <div class="auth-field">
+          <label for="field-description">Description</label>
+          <textarea id="field-description" rows="4" required></textarea>
+        </div>
+
+        <div class="auth-field">
+          <label>Photos</label>
+          <input type="file" id="field-images" accept="image/*" multiple />
+          <p class="admin-upload-status" id="upload-status"></p>
+          <div class="admin-image-preview" id="image-preview"></div>
+        </div>
+
+        <p class="auth-error" id="form-error" hidden></p>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="auth-submit" id="submit-button">Add Listing</button>
+          <a href="listings.html" class="admin-cancel-link">Cancel</a>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Stonefield&nbsp;&&nbsp;Co.</span>
+        <p>A portfolio demo project. Not a real estate agency.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../listings.html">Listings</a>
+        <a href="../about.html">About</a>
+        <a href="../login.html">Sign in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script type="module" src="../js/auth-state.js"></script>
+  <script type="module" src="../js/admin-listing-form.js"></script>
+</body>
+</html>

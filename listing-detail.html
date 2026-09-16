@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listing — Stonefield & Co.</title>
+  <meta name="description" content="Property details, photos, and pricing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" id="canonical-link" href="https://your-domain-here.pages.dev/listing-detail.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stonefield & Co." />
+  <meta property="og:title" id="og-title" content="Listing — Stonefield & Co." />
+  <meta property="og:description" id="og-description" content="Property details, photos, and pricing." />
+  <meta property="og:image" id="og-image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" id="og-url" content="https://your-domain-here.pages.dev/listing-detail.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitter-title" content="Listing — Stonefield & Co." />
+  <meta name="twitter:description" id="twitter-description" content="Property details, photos, and pricing." />
+  <meta name="twitter:image" id="twitter-image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header site-header--solid">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co.</a>
+      <nav class="main-nav">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">My Dashboard</a>
+        <a href="login.html" class="nav-cta">Sign in</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Gallery ===== -->
+    <section class="gallery">
+      <div class="gallery-main">
+        <img id="gallery-main-image" src="" alt="" />
+        <button class="favorite-toggle" id="favorite-toggle" aria-pressed="false" aria-label="Save to favorites">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 20.5s-7-4.35-9.5-8.8C.7 8.2 2.2 4.8 5.6 4.1c2-.4 4 .5 5.2 2.2C12 4.6 14 3.7 16 4.1c3.4.7 4.9 4.1 3.1 7.6C19 16.15 12 20.5 12 20.5z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="gallery-thumbs" id="gallery-thumbs">
+        <!-- thumbnails rendered by js/listing-detail.js -->
+      </div>
+    </section>
+
+    <!-- ===== Details ===== -->
+    <section class="listing-detail-body">
+
+      <div class="listing-detail-main">
+        <p class="hero-kicker" id="detail-status">Available</p>
+        <h1 id="detail-title">Loading listing…</h1>
+        <p class="detail-location" id="detail-location"></p>
+
+        <ul class="detail-specs" id="detail-specs"></ul>
+
+        <div class="detail-divider"></div>
+
+        <h2 class="detail-subheading">Description</h2>
+        <p class="detail-description" id="detail-description"></p>
+      </div>
+
+      <aside class="listing-detail-side">
+        <div class="inquiry-card">
+          <span class="detail-price" id="detail-price"></span>
+
+          <form id="inquiry-form" class="inquiry-form">
+            <div class="inquiry-field">
+              <label for="inquiry-name">Name</label>
+              <input type="text" id="inquiry-name" name="name" required />
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-email">Email</label>
+              <input type="email" id="inquiry-email" name="email" required />
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-message">Message</label>
+              <textarea id="inquiry-message" name="message" rows="4" placeholder="I'd like to know more about this property…" required></textarea>
+            </div>
+            <button type="submit" class="inquiry-submit">Send Inquiry</button>
+            <p class="inquiry-note">Signed in visitors have their name and email prefilled. Guests can inquire too, no account required.</p>
+          </form>
+
+          <p class="inquiry-success" id="inquiry-success" hidden>Thank you, your inquiry has been sent. We'll be in touch shortly.</p>
+        </div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Stonefield&nbsp;&&nbsp;Co.</span>
+        <p>A portfolio demo project. Not a real estate agency.</p>
+      </div>
+      <div class="footer-links">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script type="module" src="js/auth-state.js"></script>
+  <script type="module" src="js/listing-detail.js"></script>
+</body>
+</html>

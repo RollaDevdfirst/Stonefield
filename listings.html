@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Listings — Stonefield & Co.</title>
+  <meta name="description" content="Browse verified homes, apartments, and land currently available across Lekki, Victoria Island, Ikoyi, and Yaba, with clear, upfront pricing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://your-domain-here.pages.dev/listings.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stonefield & Co." />
+  <meta property="og:title" content="Property Listings — Stonefield & Co." />
+  <meta property="og:description" content="Browse verified homes, apartments, and land currently available across Lagos, with clear, upfront pricing." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" content="https://your-domain-here.pages.dev/listings.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Property Listings — Stonefield & Co." />
+  <meta name="twitter:description" content="Browse verified homes, apartments, and land currently available across Lagos." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co.</a>
+      <nav class="main-nav">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">My Dashboard</a>
+        <a href="login.html" class="nav-cta">Sign in</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main--flush">
+
+    <!-- ===== Page intro ===== -->
+    <section class="listings-intro">
+      <img class="listings-intro-bg" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop" alt="Modern house exterior at dusk" />
+      <div class="listings-intro-content">
+        <p class="hero-kicker hero-kicker--dark">Listings</p>
+        <h1>The full collection.</h1>
+        <p class="listings-intro-sub">Every property currently available, verified and priced clearly.</p>
+      </div>
+    </section>
+
+    <!-- ===== Filter bar ===== -->
+    <section class="filter-bar-wrap">
+      <form class="filter-bar" id="filter-form">
+        <div class="filter-field">
+          <label for="filter-location">Location</label>
+          <input type="text" id="filter-location" name="location" placeholder="City or neighborhood" />
+        </div>
+        <div class="filter-field">
+          <label for="filter-type">Type</label>
+          <select id="filter-type" name="type">
+            <option value="">Any type</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="land">Land</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-beds">Bedrooms</label>
+          <select id="filter-beds" name="beds">
+            <option value="">Any</option>
+            <option value="0">Studio</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-price">Max price</label>
+          <input type="number" id="filter-price" name="maxPrice" placeholder="Any" />
+        </div>
+        <div class="filter-field">
+          <label for="filter-sort">Sort by</label>
+          <select id="filter-sort" name="sort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+        <button type="submit" class="filter-submit">Apply</button>
+      </form>
+    </section>
+
+    <!-- ===== Results ===== -->
+    <section class="listings-results">
+      <p class="results-count" id="results-count"></p>
+      <div class="listings-grid" id="listings-grid">
+        <!-- Cards rendered by js/listings.js -->
+      </div>
+      <p class="results-empty" id="results-empty" hidden>No listings match those filters. Try widening your search.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Stonefield&nbsp;&&nbsp;Co.</span>
+        <p>A portfolio demo project. Not a real estate agency.</p>
+      </div>
+      <div class="footer-links">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script type="module" src="js/auth-state.js"></script>
+  <script type="module" src="js/listings.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /dashboard.html
+Disallow: /seed.html
+Disallow: /admin/
+
+Sitemap: https://your-domain-here.pages.dev/sitemap.xml

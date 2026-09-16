@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Favorites — Stonefield & Co.</title>
+  <meta name="description" content="Properties you've saved for later." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="auth-pending">
+<div class="auth-loading-overlay">Checking access…</div>
+
+  <header class="site-header site-header--solid">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Stonefield&nbsp;&&nbsp;Co.</a>
+      <nav class="main-nav">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="login.html" class="nav-cta">Sign in</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="listings-intro listings-intro--plain">
+      <div class="listings-intro-content">
+        <p class="hero-kicker hero-kicker--dark">Favorites</p>
+        <h1>Your saved homes.</h1>
+        <p class="listings-intro-sub">Everything you've bookmarked, in one place.</p>
+      </div>
+    </section>
+
+    <section class="listings-results">
+      <p class="results-count" id="results-count">Loading your favorites…</p>
+      <div class="listings-grid" id="favorites-grid"></div>
+
+      <div class="results-empty-state" id="favorites-empty" hidden>
+        <p>You haven't saved any properties yet.</p>
+        <a href="listings.html" class="hero-link">Browse listings →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Stonefield&nbsp;&&nbsp;Co.</span>
+        <p>A portfolio demo project. Not a real estate agency.</p>
+      </div>
+      <div class="footer-links">
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script type="module" src="js/auth-state.js"></script>
+  <script type="module" src="js/favorites.js"></script>
+</body>
+</html>
