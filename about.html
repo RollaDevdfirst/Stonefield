@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <title>About — Stonefield & Co.</title>
   <meta name="description" content="Stonefield & Co. is a curated property collection across Lagos, and this page is also a look behind the scenes at how this portfolio project was built." />
   <meta name="robots" content="index, follow" />
@@ -21,8 +24,11 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" /></noscript>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" fetchpriority="high" />
 </head>
 <body>
 
@@ -45,7 +51,18 @@
 
     <!-- ===== Page intro ===== -->
     <section class="about-hero">
-      <img class="about-hero-bg" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1800&auto=format&fit=crop" alt="Interior staircase with natural light" />
+      <img
+        class="about-hero-bg"
+        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop"
+        srcset="
+          https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop 800w,
+          https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop 1200w,
+          https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1800&auto=format&fit=crop 1800w
+        "
+        sizes="100vw"
+        alt="Interior staircase with natural light"
+        fetchpriority="high"
+      />
       <div class="about-hero-content">
         <p class="hero-kicker hero-kicker--dark">About</p>
         <h1>We think of a home as<br /><em>a floor plan first, a feeling second.</em></h1>
