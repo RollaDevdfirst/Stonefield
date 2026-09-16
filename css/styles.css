@@ -1696,6 +1696,94 @@ body.auth-pending> :not(.auth-loading-overlay) {
 }
 
 /* =========================================================
+   404 error page
+========================================================= */
+.error-page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: var(--header-height);
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.error-glow {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    max-width: 700px;
+    max-height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 168, 128, 0.16) 0%, rgba(197, 168, 128, 0) 70%);
+    pointer-events: none;
+}
+
+.error-glow--top {
+    top: -20%;
+    left: -15%;
+}
+
+.error-glow--bottom {
+    bottom: -25%;
+    right: -15%;
+}
+
+.error-page-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.error-code {
+    font-family: var(--font-serif);
+    font-size: clamp(6rem, 18vw, 11rem);
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.error-page h1 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: #fff;
+    max-width: 22ch;
+    margin: 0 auto;
+}
+
+.error-sub {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 44ch;
+    margin: 18px auto 40px;
+}
+
+.error-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 14px 36px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: var(--transition-smooth);
+}
+
+.error-cta:hover {
+    background: #d6bd97;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
    Responsive
 ========================================================= */
 @media (max-width: 960px) {
